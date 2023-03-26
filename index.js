@@ -21,10 +21,10 @@ const Post = mongoose.model('Post', PostSchema);
 
 
 
-const whitelist = ["http://localhost:3000", "http://localhost:3500"];
+const whitelist = ["https://postsitereactjs.onrender.com"];
 const corsOption = {
     origin: (origin, callback) => {
-        if (whitelist.indexOf(origin) !== -1 || !origin) {
+        if (whitelist.indexOf(origin) !== -1) {
             callback(null, true);
         } else {
             callback(new Error("Not allowed by CORS"));
